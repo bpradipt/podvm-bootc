@@ -1,6 +1,7 @@
 #!/bin/bash
 
 
+BOOTC_IMAGE=${BOOTC_IMAGE:-quay.io/bpradipt/podvm-bootc:latest}
 
 docker run \
        	-it \
@@ -11,4 +12,4 @@ docker run \
        	quay.io/centos-bootc/bootc-image-builder:latest \
 	--type qcow2 \
 	--rootfs ext4 \
-        quay.io/bpradipt/podvm-bootc:latest
+	"${BOOTC_IMAGE}"
